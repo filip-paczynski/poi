@@ -77,6 +77,8 @@ import org.apache.poi.ss.util.PaneInformation;
 import org.apache.poi.ss.util.SSCellRange;
 import org.apache.poi.ss.util.SheetUtil;
 import org.apache.poi.util.Beta;
+import org.apache.poi.util.DenseIntKeyedMap;
+import org.apache.poi.util.IntKeyedMap;
 import org.apache.poi.util.Internal;
 import org.apache.poi.util.POILogFactory;
 import org.apache.poi.util.POILogger;
@@ -163,7 +165,7 @@ public class XSSFSheet extends POIXMLDocumentPart implements Sheet  {
     protected CTSheet sheet;
     protected CTWorksheet worksheet;
 
-    private final SortedMap<Integer, XSSFRow> _rows = new TreeMap<>();
+    private final IntKeyedMap<XSSFRow> _rows = DenseIntKeyedMap.empty();
     private List<XSSFHyperlink> hyperlinks;
     private ColumnHelper columnHelper;
     private CommentsTable sheetComments;
